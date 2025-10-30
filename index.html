@@ -97,6 +97,43 @@
         <p class="small muted" style="margin-top:10px;">Note: Netlify forms will collect and show submissions in your Netlify dashboard. See instructions below for testing.</p>
       </div>
     </section>
+<!-- Social share buttons -->
+<div id="share-bar" style="display:flex;gap:8px;align-items:center;margin-top:10px;">
+  <a class="share-btn" id="share-twitter" title="Share on X" href="#" aria-label="Share on X">X</a>
+  <a class="share-btn" id="share-fb" title="Share on Facebook" href="#" aria-label="Share on Facebook">Facebook</a>
+  <a class="share-btn" id="share-linkedin" title="Share on LinkedIn" href="#" aria-label="Share on LinkedIn">LinkedIn</a>
+  <a class="share-btn" id="share-email" title="Share by email" href="#" aria-label="Share by Email">Email</a>
+  <button id="copy-link" class="share-btn" title="Copy link">Copy link</button>
+</div>
+
+<script>
+(function(){
+  const pageUrl = encodeURIComponent('https://worksavvy.netlify.app');
+  const text = encodeURIComponent("A cheaper, quieter way to work in NYC — join the waitlist for founder pricing!");
+  document.getElementById('share-twitter').href =
+    `https://twitter.com/intent/tweet?url=${pageUrl}&text=${text}`;
+  document.getElementById('share-fb').href =
+    `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
+  document.getElementById('share-linkedin').href =
+    `https://www.linkedin.com/sharing/share-offsite/?url=${pageUrl}`;
+  document.getElementById('share-email').href =
+    `mailto:?subject=${encodeURIComponent('Join this new NYC work option')}&body=${text}%0A%0A${pageUrl}`;
+  document.getElementById('copy-link').addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText('https://worksavvy.netlify.app');
+      alert('Link copied to clipboard!');
+    } catch(e) {
+      alert('Copy failed — you can always copy the URL from your browser.');
+    }
+  });
+})();
+</script>
+
+<!-- Minimal inline styles for quick clarity (optional) -->
+<style>
+  .share-btn{background:#0f172a;color:#fff;padding:6px 10px;border-radius:8px;text-decoration:none;font-size:13px;border:none;cursor:pointer}
+  #share-bar .share-btn{background:#0f172a}
+</style>
 
     <section id="howitworks" style="margin-top:18px;">
       <h3 style="margin-bottom:6px;">How it works</h3>
