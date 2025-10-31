@@ -33,56 +33,101 @@
       <nav class="muted">NYC pre-launch • Founder pricing</nav>
     </header>
 
-    <!-- STREAMLINED HERO START -->
-<section style="max-width:980px;margin:28px auto;padding:22px;display:grid;grid-template-columns:1fr;gap:18px;">
+ <!-- START STREAMLINED HERO + HOW IT WORKS + WAITLIST FORM -->
+<section id="top-hero" style="max-width:980px;margin:28px auto;padding:22px;display:grid;grid-template-columns:1fr;gap:18px;align-items:start;">
   <div style="display:flex;flex-direction:column;gap:12px;">
-    <h1 style="margin:0;font-size:32px;line-height:1.05;">Do you want affordable coworking spaces all over NYC?</h1>
-    <p style="margin:0;color:#334155;font-size:16px;max-width:650px;">
-      Affordable day passes to curated neighborhood daytime spaces across NYC — quieter than crowded cafés, cheaper than coworking memberships.
+    <h1 style="margin:0;font-size:34px;line-height:1.03;">Work anywhere in NYC — on demand.</h1>
+    <p style="margin:0;color:#334155;font-size:16px;max-width:720px;">
+      Open the map, reserve a nearby spot, and get work done — no memberships, no noise, pay only for what you use.
     </p>
 
-    <!-- pricing + CTA row -->
-    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
-      <div style="font-weight:700;">Day passes from ~$10 • 5 days $40 • Intro monthly $120</div>
+    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:8px;">
+      <div style="font-weight:700;">Day passes ~$10 • 5 days $40 • Monthly intro $120</div>
       <a class="btn" href="#waitlist" style="background:#065f46;color:#fff;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:700;">Join the waitlist</a>
     </div>
 
-   
-  <!-- compact visual -->
+    <!-- social proof (editable) -->
+    <div id="social-proof" style="color:#475569;font-weight:600;margin-top:6px;">
+      🚀 <span id="waitlist-count">128</span> people joined • <span id="founder-slots">172</span> founder spots left
+    </div>
+
+    <!-- small share bar -->
+    <div id="share-bar" style="display:flex;gap:8px;align-items:center;margin-top:10px;">
+      <a href="https://twitter.com/intent/tweet?url=https://worksavvy.netlify.app&text=A%20cheaper%2C%20quieter%20way%20to%20work%20in%20NYC%20%E2%80%94%20join%20the%20waitlist%20for%20founder%20pricing!" target="_blank" style="background:#0f172a;color:#fff;padding:6px 10px;border-radius:8px;text-decoration:none;font-size:13px;">Share</a>
+      <a href="mailto:?subject=Join%20this%20new%20NYC%20work%20option&body=Check%20this%20out%20-%20https://worksavvy.netlify.app" style="background:#0f172a;color:#fff;padding:6px 10px;border-radius:8px;text-decoration:none;font-size:13px;">Email</a>
+      <button id="copy-link" style="background:#0f172a;color:#fff;padding:6px 10px;border-radius:8px;border:none;cursor:pointer;font-size:13px;">Copy link</button>
+    </div>
+  </div>
+
   <div style="display:block;max-width:420px;margin-top:6px;">
     <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1200&q=60&auto=format&fit=crop" alt="Cozy work spot" style="width:100%;height:220px;object-fit:cover;border-radius:10px;">
   </div>
 </section>
-<!-- STREAMLINED HERO END -->
 
-    <section id="waitlist" style="margin-top:22px;">
-      <div class="card">
-        <h3 style="margin:0 0 8px 0;">Join the waitlist — founder perks</h3>
-        <p class="small">Lock founder pricing, get early booking, and earn referral credits for inviting friends.</p>
+<!-- How it works -->
+<section id="how-it-works" style="max-width:900px;margin:16px auto 36px;padding:0 12px;text-align:left;">
+  <h2 style="font-size:22px;margin-bottom:14px;text-align:center;">How it works</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;">
+    <div style="padding:12px;border-radius:10px;background:#fff;box-shadow:0 6px 18px rgba(15,23,42,0.04);">
+      <h3 style="margin:0 0 8px 0;font-size:18px;">1. Find a spot nearby</h3>
+      <p style="margin:0;color:#475569;">Open the map to see available daytime work seats across your neighborhood — live availability, like an Uber for work.</p>
+    </div>
 
-        <!-- Netlify form: includes form-name hidden field for Netlify to capture submissions -->
-        <form name="waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success.html" style="margin-top:12px;">
-          <input type="hidden" name="form-name" value="waitlist">
-          <p style="display:none"><label>Don’t fill this out: <input name="bot-field"></label></p>
+    <div style="padding:12px;border-radius:10px;background:#fff;box-shadow:0 6px 18px rgba(15,23,42,0.04);">
+      <h3 style="margin:0 0 8px 0;font-size:18px;">2. Reserve instantly</h3>
+      <p style="margin:0;color:#475569;">Tap to reserve a seat — no long contracts. Choose single days, bundles, or try the intro monthly plan.</p>
+    </div>
 
-          <label for="name">Name</label>
-          <input id="name" type="text" name="name" placeholder="Your name" required>
+    <div style="padding:12px;border-radius:10px;background:#fff;box-shadow:0 6px 18px rgba(15,23,42,0.04);">
+      <h3 style="margin:0 0 8px 0;font-size:18px;">3. Work your way</h3>
+      <p style="margin:0;color:#475569;">Check in and enjoy curated, quiet spots. Stay all day or move locations — the city becomes your office.</p>
+    </div>
+  </div>
+</section>
 
-          <label for="email">Email</label>
-          <input id="email" type="email" name="email" placeholder="you@workmail.com" required>
+<!-- WAITLIST FORM — keep Netlify attributes as they were (this is your existing working form) -->
+<section id="waitlist" style="max-width:680px;margin:0 auto;padding:12px 18px 40px;">
+  <div style="background:#fff;padding:18px;border-radius:12px;box-shadow:0 8px 24px rgba(15,23,42,0.06);">
+    <h3 style="margin:0 0 8px 0;">Join the waitlist — founder perks</h3>
+    <p style="margin:0 0 12px 0;color:#64748b;">Lock founder pricing, get early booking, and earn referral credits for inviting friends.</p>
 
-          <label for="neighborhood">Neighborhood (optional)</label>
-          <input id="neighborhood" type="text" name="neighborhood" placeholder="e.g., Flatiron, Williamsburg">
+    <!-- Netlify form: includes form-name hidden field for Netlify to capture submissions -->
+    <form name="waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success.html" style="margin-top:12px;">
+      <input type="hidden" name="form-name" value="waitlist">
+      <p style="display:none"><label>Don’t fill this out: <input name="bot-field"></label></p>
 
-          <div style="margin-top:12px;display:flex;gap:10px;align-items:center;">
-            <button class="btn" type="submit">Join Waitlist</button>
-            <div class="small muted">Founding pricing & referral perks available</div>
-          </div>
-        </form>
+      <label for="name">Name</label>
+      <input id="name" type="text" name="name" placeholder="Your name" required style="width:100%;padding:10px;margin:6px 0 10px 0;border-radius:8px;border:1px solid #e6eef2;">
 
-        <p class="small muted" style="margin-top:10px;">Note: Netlify forms will collect and show submissions in your Netlify dashboard. See instructions below for testing.</p>
+      <label for="email">Email</label>
+      <input id="email" type="email" name="email" placeholder="you@workmail.com" required style="width:100%;padding:10px;margin:6px 0 10px 0;border-radius:8px;border:1px solid #e6eef2;">
+
+      <label for="neighborhood">Neighborhood (optional)</label>
+      <input id="neighborhood" type="text" name="neighborhood" placeholder="e.g., Flatiron, Williamsburg" style="width:100%;padding:10px;margin:6px 0 12px 0;border-radius:8px;border:1px solid #e6eef2;">
+
+      <div style="display:flex;gap:12px;align-items:center;">
+        <button class="btn" type="submit" style="background:#065f46;color:#fff;padding:10px 14px;border-radius:8px;border:none;font-weight:700;">Join Waitlist</button>
+        <div style="color:#94a3b8;font-size:13px;">Founding pricing & referral perks available</div>
       </div>
-    </section>
+    </form>
+  </div>
+</section>
+
+<script>
+  // copy link button
+  document.getElementById('copy-link')?.addEventListener('click', async function(){
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      alert('Link copied to clipboard!');
+    } catch(e) {
+      alert('Copy failed — copy the URL from your browser address bar.');
+    }
+  });
+
+  // optional: click-to-copy referral (if you later implement referral codes)
+</script>
+<!-- END STREAMLINED HERO + HOW IT WORKS + WAITLIST FORM -->
+
 <!-- Social share buttons -->
 <div id="share-bar" style="display:flex;gap:8px;align-items:center;margin-top:10px;">
   <a class="share-btn" id="share-twitter" title="Share on X" href="#" aria-label="Share on X">X</a>
